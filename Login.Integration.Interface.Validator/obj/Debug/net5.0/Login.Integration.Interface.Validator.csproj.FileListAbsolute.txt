@@ -1,0 +1,12 @@
+/Users/makinohara/Projects/Login/Login.Integration.Interface.Validator/bin/Debug/net5.0/Login.Integration.Interface.Validator.deps.json
+/Users/makinohara/Projects/Login/Login.Integration.Interface.Validator/bin/Debug/net5.0/Login.Integration.Interface.Validator.dll
+/Users/makinohara/Projects/Login/Login.Integration.Interface.Validator/bin/Debug/net5.0/ref/Login.Integration.Interface.Validator.dll
+/Users/makinohara/Projects/Login/Login.Integration.Interface.Validator/bin/Debug/net5.0/Login.Integration.Interface.Validator.pdb
+/Users/makinohara/Projects/Login/Login.Integration.Interface.Validator/obj/Debug/net5.0/Login.Integration.Interface.Validator.csproj.AssemblyReference.cache
+/Users/makinohara/Projects/Login/Login.Integration.Interface.Validator/obj/Debug/net5.0/Login.Integration.Interface.Validator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/makinohara/Projects/Login/Login.Integration.Interface.Validator/obj/Debug/net5.0/Login.Integration.Interface.Validator.AssemblyInfoInputs.cache
+/Users/makinohara/Projects/Login/Login.Integration.Interface.Validator/obj/Debug/net5.0/Login.Integration.Interface.Validator.AssemblyInfo.cs
+/Users/makinohara/Projects/Login/Login.Integration.Interface.Validator/obj/Debug/net5.0/Login.Integration.Interface.Validator.csproj.CoreCompileInputs.cache
+/Users/makinohara/Projects/Login/Login.Integration.Interface.Validator/obj/Debug/net5.0/Login.Integration.Interface.Validator.dll
+/Users/makinohara/Projects/Login/Login.Integration.Interface.Validator/obj/Debug/net5.0/ref/Login.Integration.Interface.Validator.dll
+/Users/makinohara/Projects/Login/Login.Integration.Interface.Validator/obj/Debug/net5.0/Login.Integration.Interface.Validator.pdb

@@ -1,0 +1,12 @@
+/Users/makinohara/Projects/Login/Login.DomainModel/bin/Debug/net5.0/Login.DomainModel.deps.json
+/Users/makinohara/Projects/Login/Login.DomainModel/bin/Debug/net5.0/Login.DomainModel.dll
+/Users/makinohara/Projects/Login/Login.DomainModel/bin/Debug/net5.0/ref/Login.DomainModel.dll
+/Users/makinohara/Projects/Login/Login.DomainModel/bin/Debug/net5.0/Login.DomainModel.pdb
+/Users/makinohara/Projects/Login/Login.DomainModel/obj/Debug/net5.0/Login.DomainModel.csproj.AssemblyReference.cache
+/Users/makinohara/Projects/Login/Login.DomainModel/obj/Debug/net5.0/Login.DomainModel.GeneratedMSBuildEditorConfig.editorconfig
+/Users/makinohara/Projects/Login/Login.DomainModel/obj/Debug/net5.0/Login.DomainModel.AssemblyInfoInputs.cache
+/Users/makinohara/Projects/Login/Login.DomainModel/obj/Debug/net5.0/Login.DomainModel.AssemblyInfo.cs
+/Users/makinohara/Projects/Login/Login.DomainModel/obj/Debug/net5.0/Login.DomainModel.csproj.CoreCompileInputs.cache
+/Users/makinohara/Projects/Login/Login.DomainModel/obj/Debug/net5.0/Login.DomainModel.dll
+/Users/makinohara/Projects/Login/Login.DomainModel/obj/Debug/net5.0/ref/Login.DomainModel.dll
+/Users/makinohara/Projects/Login/Login.DomainModel/obj/Debug/net5.0/Login.DomainModel.pdb
