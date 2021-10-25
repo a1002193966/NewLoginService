@@ -1,8 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using Login.Integration.Interface.Commands;
+using Login.Integration.Interface.Responses;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Login.WebApi.Controllers
@@ -11,10 +12,20 @@ namespace Login.WebApi.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        [HttpGet("test-endpoint")]
-        public IEnumerable<string> Get()
+        private readonly IMediator _mediator;
+
+        public LoginController(IMediator mediator)
         {
-            return new string[] { "so", "smart" };
+            _mediator = mediator;
+        }
+
+        [HttpPost("register")]
+        [ProducesResponseType(typeof(RegisterResponse), (int)HttpStatusCode.Created)]
+        public async Task<ActionResult<RegisterResponse>> RegisterAsync(
+            [FromBody] RegisterCommand request, CancellationToken ct)
+        {
+            var response = await _mediator.Send(request, ct);
+            return Created("/register", response);
         }
     }
 }
