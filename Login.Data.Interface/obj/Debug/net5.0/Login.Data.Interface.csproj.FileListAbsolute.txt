@@ -1,0 +1,11 @@
+/Users/makinohara/Projects/Login/Login.Data.Interface/bin/Debug/net5.0/Login.Data.Interface.deps.json
+/Users/makinohara/Projects/Login/Login.Data.Interface/bin/Debug/net5.0/Login.Data.Interface.dll
+/Users/makinohara/Projects/Login/Login.Data.Interface/bin/Debug/net5.0/ref/Login.Data.Interface.dll
+/Users/makinohara/Projects/Login/Login.Data.Interface/bin/Debug/net5.0/Login.Data.Interface.pdb
+/Users/makinohara/Projects/Login/Login.Data.Interface/obj/Debug/net5.0/Login.Data.Interface.GeneratedMSBuildEditorConfig.editorconfig
+/Users/makinohara/Projects/Login/Login.Data.Interface/obj/Debug/net5.0/Login.Data.Interface.AssemblyInfoInputs.cache
+/Users/makinohara/Projects/Login/Login.Data.Interface/obj/Debug/net5.0/Login.Data.Interface.AssemblyInfo.cs
+/Users/makinohara/Projects/Login/Login.Data.Interface/obj/Debug/net5.0/Login.Data.Interface.csproj.CoreCompileInputs.cache
+/Users/makinohara/Projects/Login/Login.Data.Interface/obj/Debug/net5.0/Login.Data.Interface.dll
+/Users/makinohara/Projects/Login/Login.Data.Interface/obj/Debug/net5.0/ref/Login.Data.Interface.dll
+/Users/makinohara/Projects/Login/Login.Data.Interface/obj/Debug/net5.0/Login.Data.Interface.pdb
