@@ -7,9 +7,19 @@
   <ItemGroup>
     <None Remove="CommandHandlers\" />
     <None Remove="QueryHandlers\" />
+    <None Remove="Core\" />
+    <None Remove="MediatR" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CommandHandlers\" />
     <Folder Include="QueryHandlers\" />
+    <Folder Include="Core\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Login.Integration.Interface\Login.Integration.Interface.csproj" />
+    <ProjectReference Include="..\Login.Data.Interface\Login.Data.Interface.csproj" />
   </ItemGroup>
 </Project>
