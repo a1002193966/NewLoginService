@@ -9,11 +9,15 @@
     <None Remove="QueryHandlers\" />
     <None Remove="Core\" />
     <None Remove="MediatR" />
+    <None Remove="UtilityServices\" />
+    <None Remove="UtilityServices\PasswordService\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CommandHandlers\" />
     <Folder Include="QueryHandlers\" />
     <Folder Include="Core\" />
+    <Folder Include="UtilityServices\" />
+    <Folder Include="UtilityServices\PasswordService\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="9.0.0" />

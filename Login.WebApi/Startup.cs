@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MediatR;
 using System.Reflection;
+using Login.Services.UtilityServices.PasswordService;
 
 namespace Login.WebApi
 {
@@ -49,6 +50,8 @@ namespace Login.WebApi
             });
 
             services.AddMediatR(Assembly.GetAssembly(typeof(Services.Core.RequestHandler<,>)));
+
+            services.AddSingleton<ICryptoService, CryptoService>();
 
             services.AddScoped<ILoginDbContext, LoginDbContext>();
         }
