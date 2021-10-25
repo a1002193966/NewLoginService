@@ -232,3 +232,10 @@ __pycache__/\
 \
 # Windows thumbnail cache files\
 Thumbs.db}
+
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
