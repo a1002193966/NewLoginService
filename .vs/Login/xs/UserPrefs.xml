@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{F4B34E80-9B6B-4105-85E7-89A1822D61E5}|Default">
+  <MonoDevelop.Ide.ItemProperties.Login.Service FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Login.Integration.Interface FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Login.Integration.Interface.Validator FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Login.WebApi PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Login" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
