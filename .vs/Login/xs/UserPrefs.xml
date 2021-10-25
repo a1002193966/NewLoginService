@@ -13,6 +13,10 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+<<<<<<< HEAD
+=======
+  <MonoDevelop.Ide.ItemProperties.Login.Services FirstBuild="True" />
+>>>>>>> efd79b6bb8a68c2321bf3066304466a92c740cf1
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
