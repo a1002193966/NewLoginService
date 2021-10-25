@@ -10,6 +10,8 @@ using Microsoft.OpenApi.Models;
 using MediatR;
 using System.Reflection;
 using Login.Services.UtilityServices.PasswordService;
+using FluentValidation.AspNetCore;
+using Login.Integration.Interface.Validator;
 
 namespace Login.WebApi
 {
@@ -28,7 +30,13 @@ namespace Login.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services
+                .AddControllers()
+                .AddFluentValidation(options =>
+                {
+                    options.RunDefaultMvcValidationAfterFluentValidationExecutes = false;
+                    options.RegisterValidatorsFromAssemblyContaining<ValidatorBase<IRequest>>();
+                });
 
             services.AddSwaggerGen(options =>
             {
