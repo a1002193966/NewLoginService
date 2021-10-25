@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Login.Service
+namespace Login.Services
 {
     public class Class1
     {
