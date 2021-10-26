@@ -8,6 +8,7 @@ namespace Login.Data
     {
         public LoginDbContext(DbContextOptions<LoginDbContext> options) : base(options)
         {
+
         }
 
         public DbSet<Account> Account => Set<Account>();

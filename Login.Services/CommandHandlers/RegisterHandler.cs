@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using Login.DomainModel;
 using Login.Integration.Interface.Commands;
 using Login.Integration.Interface.Responses;
 using Login.Services.UtilityServices.PasswordService;
+using Microsoft.Extensions.Configuration;
 
 namespace Login.Services.CommandHandlers
 {
@@ -14,19 +16,23 @@ namespace Login.Services.CommandHandlers
     {
         private readonly ILoginDbContext _loginDbContext;
         private readonly ICryptoService _cryptoService;
+        private readonly string _connectionString;
 
-        public RegisterHandler(ILoginDbContext loginDbContext, ICryptoService cryptoService)
+        public RegisterHandler(ILoginDbContext loginDbContext, ICryptoService cryptoService, IConfiguration configuration)
         {
             _loginDbContext = loginDbContext;
             _cryptoService = cryptoService;
+            _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
 
         protected override async Task<RegisterResponse> HandleRequest(RegisterCommand request, CancellationToken ct)
         {
-            if (IsExist(request.Email))
+            if (await IsExistAsync(request.Email))
                 throw new ArgumentException($"Email: {request.Email} is already registered.");
 
             var account = await CreateNewAccount(request);
+
+
             await _loginDbContext.Account.AddAsync(account, ct);
             await _loginDbContext.SaveChangesAsync(ct);
 
@@ -38,7 +44,7 @@ namespace Login.Services.CommandHandlers
             return response;
         }
 
-        private bool IsExist(string email)
+        private async Task<bool> IsExistAsync(string email)
         {
             return _loginDbContext
                 .Account

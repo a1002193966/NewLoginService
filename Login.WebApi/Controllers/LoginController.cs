@@ -27,5 +27,14 @@ namespace Login.WebApi.Controllers
             var response = await _mediator.Send(request, ct);
             return Created("/register", response);
         }
+
+        [HttpPost("login")]
+        [ProducesResponseType(typeof(LoginResponse), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<LoginResponse>> LoginAsync(
+            [FromBody] LoginCommand request, CancellationToken ct)
+        {
+            var response = await _mediator.Send(request, ct);
+            return Ok(response);
+        }
     }
 }
