@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using Login.DomainModel;
 using Login.Integration.Interface.Commands;
 using Login.Integration.Interface.Responses;
 using Login.Services.UtilityServices.PasswordService;
+using Microsoft.Extensions.Configuration;
 
 namespace Login.Services.CommandHandlers
 {
@@ -19,6 +21,7 @@ namespace Login.Services.CommandHandlers
         {
             _loginDbContext = loginDbContext;
             _cryptoService = cryptoService;
+
         }
 
         protected override async Task<RegisterResponse> HandleRequest(RegisterCommand request, CancellationToken ct)
@@ -27,6 +30,8 @@ namespace Login.Services.CommandHandlers
                 throw new ArgumentException($"Email: {request.Email} is already registered.");
 
             var account = await CreateNewAccount(request);
+
+
             await _loginDbContext.Account.AddAsync(account, ct);
             await _loginDbContext.SaveChangesAsync(ct);
 

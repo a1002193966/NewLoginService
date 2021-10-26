@@ -1,23 +1,22 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.810.11
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login.WebApi", "Login.WebApi\Login.WebApi.csproj", "{F4B34E80-9B6B-4105-85E7-89A1822D61E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login.WebApi", "Login.WebApi\Login.WebApi.csproj", "{F4B34E80-9B6B-4105-85E7-89A1822D61E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login.DomainModel", "Login.DomainModel\Login.DomainModel.csproj", "{A637814A-31BC-4406-A9F3-98FC35A5D974}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login.DomainModel", "Login.DomainModel\Login.DomainModel.csproj", "{A637814A-31BC-4406-A9F3-98FC35A5D974}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login.Data", "Login.Data\Login.Data.csproj", "{7C2A4C41-D507-4DF7-B1B9-701C90D27677}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login.Data", "Login.Data\Login.Data.csproj", "{7C2A4C41-D507-4DF7-B1B9-701C90D27677}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login.Data.Interface", "Login.Data.Interface\Login.Data.Interface.csproj", "{46A607CE-952C-4EFD-A141-AFD6FCD7954A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login.Data.Interface", "Login.Data.Interface\Login.Data.Interface.csproj", "{46A607CE-952C-4EFD-A141-AFD6FCD7954A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login.Integration.Interface", "Login.Integration.Interface\Login.Integration.Interface.csproj", "{9B9468B6-EB3A-4948-A963-92EA20CAB372}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login.Integration.Interface", "Login.Integration.Interface\Login.Integration.Interface.csproj", "{9B9468B6-EB3A-4948-A963-92EA20CAB372}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login.Integration.Interface.Validator", "Login.Integration.Interface.Validator\Login.Integration.Interface.Validator.csproj", "{8832FCCB-4BFA-4CD4-819A-4F7372B6EDD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login.Integration.Interface.Validator", "Login.Integration.Interface.Validator\Login.Integration.Interface.Validator.csproj", "{8832FCCB-4BFA-4CD4-819A-4F7372B6EDD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login.Services", "Login.Services\Login.Services.csproj", "{606C943F-27DC-4713-A028-125E68280CCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login.Services", "Login.Services\Login.Services.csproj", "{606C943F-27DC-4713-A028-125E68280CCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login.Tests", "Login.Tests\Login.Tests.csproj", "{E5E40DEA-0DC6-4AD3-85D4-05605B8DDC81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login.Tests", "Login.Tests\Login.Tests.csproj", "{E5E40DEA-0DC6-4AD3-85D4-05605B8DDC81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

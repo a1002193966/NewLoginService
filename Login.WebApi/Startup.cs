@@ -12,6 +12,10 @@ using System.Reflection;
 using Login.Services.UtilityServices.PasswordService;
 using FluentValidation.AspNetCore;
 using Login.Integration.Interface.Validator;
+using Login.Services.UtilityServices.TokenService;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Login.WebApi
 {
@@ -52,16 +56,32 @@ namespace Login.WebApi
 
             services.AddDbContext<LoginDbContext>(options =>
             {
-                //var connectionString = Configuration.GetConnectionString("DefaultConnection");
-                //options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
-                options.UseInMemoryDatabase("Database");
+                var connectionString = Configuration.GetConnectionString("DefaultConnection");
+                options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
+                //options.UseInMemoryDatabase("Database");
+            });
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = Configuration.GetSection("JWT").GetSection("Issuer").Value,
+                    ValidAudience = Configuration.GetSection("JWT").GetSection("Issuer").Value,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetSection("JWT").GetSection("Key").Value))
+                };
             });
 
             services.AddMediatR(Assembly.GetAssembly(typeof(Services.Core.RequestHandler<,>)));
 
             services.AddSingleton<ICryptoService, CryptoService>();
+            services.AddScoped<ILoginToken, LoginToken>();
 
             services.AddScoped<ILoginDbContext, LoginDbContext>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
