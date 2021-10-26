@@ -53,16 +53,9 @@ namespace Login.Services.CommandHandlers
 
 
             private async Task<bool> Login(LoginCommand request, Secret secret)
-        {
-            // byte[] passwordHash = await getPasswordHash(request.Email, request.Password
-
-            var passwd = _cryptoService.DecryptAes(secret);
-            if (await passwd == request.Password)
             {
-                return true;
+                var recordedPassword = await _cryptoService.DecryptAes(secret);
+                return recordedPassword == request.Password;
             }
-            return false;
-
-        }
     }
 }

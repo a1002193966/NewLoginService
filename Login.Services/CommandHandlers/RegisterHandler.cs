@@ -27,7 +27,7 @@ namespace Login.Services.CommandHandlers
 
         protected override async Task<RegisterResponse> HandleRequest(RegisterCommand request, CancellationToken ct)
         {
-            if (await IsExistAsync(request.Email))
+            if (IsExist(request.Email))
                 throw new ArgumentException($"Email: {request.Email} is already registered.");
 
             var account = await CreateNewAccount(request);
@@ -44,7 +44,7 @@ namespace Login.Services.CommandHandlers
             return response;
         }
 
-        private async Task<bool> IsExistAsync(string email)
+        private bool IsExist(string email)
         {
             return _loginDbContext
                 .Account
