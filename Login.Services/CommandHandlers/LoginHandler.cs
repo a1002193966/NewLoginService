@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Login.Data.Interface;
-using Login.DomainModel;
 using Login.Integration.Interface.Commands;
 using Login.Integration.Interface.Responses;
 using Login.Services.UtilityServices.PasswordService;
@@ -16,6 +15,7 @@ namespace Login.Services.CommandHandlers
         private readonly ILoginDbContext _loginDbContext;
         private readonly ICryptoService _cryptoService;
         private readonly ILoginToken _loginToken;
+
         public LoginHandler(ILoginDbContext loginDbContext, ICryptoService cryptoService, ILoginToken loginToken)
         {
             _loginDbContext = loginDbContext;
@@ -25,37 +25,40 @@ namespace Login.Services.CommandHandlers
 
         protected override async Task<LoginResponse> HandleRequest(LoginCommand request, CancellationToken ct)
         {
+            LoginResponse response = new();
 
-            var acc = _loginDbContext.Account.Where(x => x.NormalizedEmail == request.Email.ToUpper()).Select(  x => new{x.Cipher, x.Key,  x.IV }).FirstOrDefault();
-            if (acc == null)
-                throw new ArgumentException($"Invalid  Email.");
-
-            Secret secret = new()
+            if (TryGetAccountInfoByEmail(request.Email, out var id, out var recordedSecret))
             {
-                Cipher = acc.Cipher,
-                Key = acc.Key,
-                IV = acc.IV
-
-            };
-
-            if (!await Login(request, secret))
-                throw new ArgumentException($"Incorrect password for account: {request.Email}.");
-
-            var tokenString = await _loginToken.GenerateToken(request);
-
-            LoginResponse response = new()
-            {
-                Token = tokenString,
-                Status = true
-            };
+                var isPasswordMatch = await TryLogin(request, recordedSecret);
+                if (!isPasswordMatch)
+                    throw new ArgumentException($"Incorrect password for account: {request.Email}.");
+                response.Token = _loginToken.GenerateToken(id, request.Email);
+                response.Status = true;
+            }
             return response;
         }
 
+        private bool TryGetAccountInfoByEmail(string email, out string id, out Secret secret)
+        {
+            var accountInfo = _loginDbContext.Account.Where(x => x.NormalizedEmail == email.ToUpper())
+                .Select(x => new { Id = x.Id, Cipher = x.Cipher, Key = x.Key, IV = x.IV })
+                .FirstOrDefault();
 
-            private async Task<bool> Login(LoginCommand request, Secret secret)
+            id = accountInfo?.Id.ToString();
+            secret = new()
             {
-                var recordedPassword = await _cryptoService.DecryptAes(secret);
-                return recordedPassword == request.Password;
-            }
+                Cipher = accountInfo?.Cipher,
+                Key = accountInfo?.Key,
+                IV = accountInfo?.IV
+            };
+
+            return accountInfo?.Id is not null && secret.Cipher is not null;
+        }
+
+        private async Task<bool> TryLogin(LoginCommand request, Secret secret)
+        {
+            var recordedPassword = await _cryptoService.DecryptAes(secret);
+            return recordedPassword == request.Password;
+        }
     }
 }

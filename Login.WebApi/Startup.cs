@@ -56,9 +56,9 @@ namespace Login.WebApi
 
             services.AddDbContext<LoginDbContext>(options =>
             {
-                var connectionString = Configuration.GetConnectionString("DefaultConnection");
-                options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
-                //options.UseInMemoryDatabase("Database");
+                //var connectionString = Configuration.GetConnectionString("DefaultConnection");
+                //options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure());
+                options.UseInMemoryDatabase("Database");
             });
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
