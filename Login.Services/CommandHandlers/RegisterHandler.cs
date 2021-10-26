@@ -16,13 +16,12 @@ namespace Login.Services.CommandHandlers
     {
         private readonly ILoginDbContext _loginDbContext;
         private readonly ICryptoService _cryptoService;
-        private readonly string _connectionString;
 
-        public RegisterHandler(ILoginDbContext loginDbContext, ICryptoService cryptoService, IConfiguration configuration)
+        public RegisterHandler(ILoginDbContext loginDbContext, ICryptoService cryptoService)
         {
             _loginDbContext = loginDbContext;
             _cryptoService = cryptoService;
-            _connectionString = configuration.GetConnectionString("DefaultConnection");
+
         }
 
         protected override async Task<RegisterResponse> HandleRequest(RegisterCommand request, CancellationToken ct)
